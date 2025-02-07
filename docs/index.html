@@ -260,65 +260,65 @@
         let isDragging = false;
 
         function handleDrag(e) {
-          let containerRect = container.getBoundingClientRect();
-          let offsetX = e.clientX - containerRect.left;
-          let width = containerRect.width;
-          
-          // 限制滑块移动范围，保证分界线始终可见
-          // 左右各预留20px（考虑到滑块按钮的宽度）
-          offsetX = Math.max(20, Math.min(offsetX, width - 20));
-          
-          // 更新滑块位置
-          slider.style.left = `${offsetX}px`;
-          
-          // 更新图片裁剪
-          blurImg.style.clip = `rect(0, ${offsetX}px, auto, 0)`;
+            let containerRect = container.getBoundingClientRect();
+            let offsetX = e.clientX - containerRect.left;
+            let width = containerRect.width;
+            
+            // 限制滑块移动范围，保证分界线始终可见
+            // 左右各预留20px（考虑到滑块按钮的宽度）
+            offsetX = Math.max(20, Math.min(offsetX, width - 20));
+            
+            // 更新滑块位置
+            slider.style.left = `${offsetX}px`;
+            
+            // 更新图片裁剪
+            blurImg.style.clip = `rect(0, ${offsetX}px, auto, 0)`;
         }
 
         // 只在鼠标悬停在滑块按钮上时才开始拖动
         sliderButton.addEventListener('mouseenter', function(e) {
-          isDragging = true;
-          handleDrag(e);
+            isDragging = true;
+            handleDrag(e);
         });
 
         // 鼠标离开容器时停止拖动
         container.addEventListener('mouseleave', function() {
-          isDragging = false;
+            isDragging = false;
         });
 
         // 拖动过程
         document.addEventListener('mousemove', function(e) {
-          if (isDragging) {
-            handleDrag(e);
-            e.preventDefault(); // 防止拖动时选中文本
-          }
+            if (isDragging) {
+                handleDrag(e);
+                e.preventDefault(); // 防止拖动时选中文本
+            }
         });
 
         // 处理预览图点击
         previews.forEach(preview => {
-          preview.addEventListener('click', function() {
-            const clearSrc = this.getAttribute('data-clear');
-            const blurSrc = this.getAttribute('data-blur');
-            clearImg.src = clearSrc;
-            blurImg.src = blurSrc;
-          });
+            preview.addEventListener('click', function() {
+                const clearSrc = this.getAttribute('data-clear');
+                const blurSrc = this.getAttribute('data-blur');
+                clearImg.src = clearSrc;
+                blurImg.src = blurSrc;
+            });
         });
 
-        // 添加触摸设备支持
+        // 触摸设备支持
         sliderButton.addEventListener('touchstart', function(e) {
-          isDragging = true;
-          handleDrag(e.touches[0]);
+            isDragging = true;
+            handleDrag(e.touches[0]);
         });
 
         document.addEventListener('touchend', function() {
-          isDragging = false;
+            isDragging = false;
         });
 
         document.addEventListener('touchmove', function(e) {
-          if (isDragging) {
-            handleDrag(e.touches[0]);
-            e.preventDefault();
-          }
+            if (isDragging) {
+                handleDrag(e.touches[0]);
+                e.preventDefault();
+            }
         });
       });
     </script>

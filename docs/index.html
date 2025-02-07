@@ -324,29 +324,48 @@
       });
     </script>
 
+    <!-- Numerical Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Numerical Results</h2>
+        <div class="content has-text-justified">
+          <figure style="text-align:center;">
+            <img id="ablation" src="static/images/numerical_results.jpg" alt="Ablation Image" height="100%">
+            <figcaption style="font-size:0.9em; color:#555;">
+              After tolerance-aware optimization, Deep Optics demonstrates enhanced robustness to the actual tolerances, significantly improving its manufacturing yield, thereby narrowing the gap between design and manufacture.
+            </figcaption>
+          </figure>
+
+          <p></p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <!--/ Numerical Results. -->
+
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-4">Visual Results</h2>
+        <h2 class="title is-4">Ablation Results</h2>
         <div class="content has-text-justified">
           <figure style="text-align:center;">
-            <img id="ablation" src="static/images/syn5.jpg" alt="Ablation Image" height="100%">
+            <img id="ablation" src="static/images/optics_ablation.jpg" alt="Ablation Image" height="100%">
             <figcaption style="font-size:0.9em; color:#555;">
-              Visual results on a synthetic image. To better illustrate both the darkest and brightest regions of a 12-stop HDR image, we apply two tone mapping styles (Deep and Vibrant) of the HDR tool (Photomatix).
+              After tolerance-aware optimization, the optical component of Deep Optics exhibits minimal changes in the PSF when subjected to random tolerance disturbances, allowing the decoder to handle the relatively small variations in imaging properties more easily.
             </figcaption>
           </figure>
 
           <figure style="text-align:center;">
-            <img id="ablation" src="static/images/real_8.jpg" alt="Ablation Image" height="100%">
+            <img id="ablation" src="static/images/decoder_ablation.jpg" alt="Ablation Image" height="100%">
             <figcaption style="font-size:0.9em; color:#555;">
-              Visual results on real-captured image.
+              After tolerance-aware optimization, the decoder in Deep Optics demonstrates enhanced capability to handle variations in optical imaging properties induced by random tolerances.
             </figcaption>
           </figure>
 
           <figure style="text-align:center;">
-            <img id="ablation" src="static/images/real2.jpg" alt="Ablation Image" height="100%">
+            <img id="ablation" src="static/images/perb_num.jpg" alt="Ablation Image" height="100%">
             <figcaption style="font-size:0.9em; color:#555;">
-              Visual results on real-captured image.
+              To ensure a more stable training process, it is essential to sample a statistically meaningful number of tolerance disturbance patterns.
             </figcaption>
           </figure>
 

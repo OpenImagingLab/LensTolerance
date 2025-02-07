@@ -101,9 +101,8 @@
                           </a>
                       </span>
                       <!-- Dataset Link. -->
-                      <!--
                       <span class="link-block">
-                        <a href="https://drive.google.com/drive/folders/1ssEE1wvnBt4EZjxoCcfoIX8FzOsTIKN8?usp=drive_link"
+                        <a href="https://drive.google.com/drive/folders/1gs_Qw7d7D4-9IHkBrxVSzFTUOMXibzkZ?usp=sharing"
                            class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                               <i class="far fa-images"></i>
@@ -111,7 +110,6 @@
                           <span>Data</span>
                           </a>
                       </span>
-                      -->
                     </div>
             </div>
           </div>
@@ -159,23 +157,16 @@
       <div class="column is-four-fifths">
         <h2 class="title is-4">Main idea</h2>
         <div class="content has-text-justified">
-          <img id="teaser" src="static/images/framework_v16.png" alt="Teaser Image" height="100%">
-          <strong style="color:#2f5faf;">How we push the boundaries of dynamic scene HDR imaging to capture the full 12-stop range:</strong>
+          <img id="teaser" src="static/images/pipeline.png" alt="Teaser Image" height="100%">
+          <strong style="color:#2f5faf;">How we enhance the tolerance robustness of deep optics:</strong>
           <ul>
-            <li> Our method utilize event camera (<strong>temporally dense, ~140dB</strong>) and propose the explict 
-              event-assisted alignment module to align LDRs with extreme exposure differences. 
-              Also the proposed alignment module is finetuned using real-world interpolation
-              datasets, which are easier to acquire and widely available, to brige the gap between simulated
-              and real-world events </li>
-            <li> We propose a diffusion-based fusion module to merge aligned LDR images with significant 
-              exposure differences and generate HDR images. By leveraging a pre-trained latent stable 
-              diffusion model as an image prior, our fusion module mitigates the effects of alignment errors and occlusion boundaries, 
-              thereby achieving artifact-free HDR results. </li>
+            <li> We first implement a tolerance sampler that can convert random tolerances into variations in optical parameters and spatial transformations. The tolerance sampler is capable of applying realistic tolerance perturbations to lens systems, thereby reducing the gap between design and manufacture. </li>
+            <li> We design two loss functions aimed at improving the optical tolerance robustness: PSF Loss and Spot Loss. The combined use of these two losses significantly enhances the stability of end-to-end deep optical training. </li>
           </ul>
           <figure style="text-align:center;">
-            <img id="ablation" src="static/images/ablation_v8.jpg" alt="Ablation Image" height="100%">
+            <img id="ablation" src="static/images/tolerance sampler.png" alt="Ablation Image" height="100%">
             <figcaption style="font-size:0.9em; color:#555;">
-                Ablation study on fusion and alignment modules by comparison of different configurations.
+              Top: Demonstration of tolerance effects; Bottom: Ray tracing with tolerance results comparison against ZEMAX.
             </figcaption>
           </figure>
 

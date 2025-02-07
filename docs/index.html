@@ -177,6 +177,153 @@
     </div>
     <!--/ Main Idea. -->
 
+    <!-- Visual Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Results Comparison</h2>
+        <div class="content">
+          <!-- Preview thumbnails with horizontal scroll -->
+          <div class="preview-container" style="width: 100%; overflow-x: auto; white-space: nowrap; margin-bottom: 20px; padding: 10px 0;">
+            <div style="display: inline-flex; gap: 20px; padding: 0 10px;">
+              <div class="preview" data-clear="static/comparison_imgs/clear1.jpg" data-blur="static/comparison_imgs/blur1.jpg">
+                <img src="static/comparison_imgs/clear1.jpg" alt="Preview 1" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear2.jpg" data-blur="static/comparison_imgs/blur2.jpg">
+                <img src="static/comparison_imgs/clear2.jpg" alt="Preview 2" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear3.jpg" data-blur="static/comparison_imgs/blur3.jpg">
+                <img src="static/comparison_imgs/clear3.jpg" alt="Preview 3" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear4.jpg" data-blur="static/comparison_imgs/blur4.jpg">
+                <img src="static/comparison_imgs/clear4.jpg" alt="Preview 4" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear5.jpg" data-blur="static/comparison_imgs/blur5.jpg">
+                <img src="static/comparison_imgs/clear5.jpg" alt="Preview 5" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear6.jpg" data-blur="static/comparison_imgs/blur6.jpg">
+                <img src="static/comparison_imgs/clear6.jpg" alt="Preview 6" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear7.jpg" data-blur="static/comparison_imgs/blur7.jpg">
+                <img src="static/comparison_imgs/clear7.jpg" alt="Preview 7" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear8.jpg" data-blur="static/comparison_imgs/blur8.jpg">
+                <img src="static/comparison_imgs/clear8.jpg" alt="Preview 8" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear9.jpg" data-blur="static/comparison_imgs/blur9.jpg">
+                <img src="static/comparison_imgs/clear9.jpg" alt="Preview 9" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear10.jpg" data-blur="static/comparison_imgs/blur10.jpg">
+                <img src="static/comparison_imgs/clear10.jpg" alt="Preview 10" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear11.jpg" data-blur="static/comparison_imgs/blur11.jpg">
+                <img src="static/comparison_imgs/clear11.jpg" alt="Preview 11" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear12.jpg" data-blur="static/comparison_imgs/blur12.jpg">
+                <img src="static/comparison_imgs/clear12.jpg" alt="Preview 12" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+              <div class="preview" data-clear="static/comparison_imgs/clear13.jpg" data-blur="static/comparison_imgs/blur13.jpg">
+                <img src="static/comparison_imgs/clear13.jpg" alt="Preview 13" style="width: 120px; height: auto; cursor: pointer; border-radius: 4px;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Image comparison slider -->
+          <div class="container" style="position: relative; width: 100%; max-width: 800px; margin: 0 auto;">
+            <div class="img-wrapper" style="position: relative; overflow: hidden;">
+              <div class="label" id="label-clear" style="position: absolute; top: 20px; color: white; padding: 5px 10px; background: rgba(0,0,0,0.5); z-index: 2;">w/o TOLR</div>
+              <div class="label" id="label-blur" style="position: absolute; top: 20px; right: 0; color: white; padding: 5px 10px; background: rgba(0,0,0,0.5); z-index: 2;">w/ TOLR</div>
+              <img src="static/comparison_imgs/clear1.jpg" alt="Clear Image" class="clear-img" style="width: 100%; display: block;">
+              <div class="slider" id="slider" style="position: absolute; top: 0; bottom: 0; width: 2px; background: white; left: 50%; transform: translateX(-50%); z-index: 2; pointer-events: none;">
+                <div class="slider-button" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: rgba(255,255,255,0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: ew-resize; pointer-events: auto;">
+                  <div style="color: #000;">⇄</div>
+                </div>
+              </div>
+              <img src="static/comparison_imgs/blur1.jpg" alt="Blur Image" class="blur-img" style="position: absolute; top: 0; left: 0; width: 100%; clip: rect(0, 50%, auto, 0);">
+            </div>
+          </div>
+
+          <p style="margin-top: 20px; font-size: 0.9em; color: #555; text-align: center;">
+            Drag the slider to compare results with and without our TOLR. Click on the previews above to view different cases.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.getElementById('slider');
+        const blurImg = document.querySelector('.blur-img');
+        const clearImg = document.querySelector('.clear-img');
+        const container = document.querySelector('.container');
+        const previews = document.querySelectorAll('.preview');
+        const sliderButton = slider.querySelector('.slider-button');
+        
+        let isDragging = false;
+
+        function handleDrag(e) {
+          let containerRect = container.getBoundingClientRect();
+          let offsetX = e.clientX - containerRect.left;
+          let width = containerRect.width;
+          
+          // 限制滑块移动范围，保证分界线始终可见
+          // 左右各预留20px（考虑到滑块按钮的宽度）
+          offsetX = Math.max(20, Math.min(offsetX, width - 20));
+          
+          // 更新滑块位置
+          slider.style.left = `${offsetX}px`;
+          
+          // 更新图片裁剪
+          blurImg.style.clip = `rect(0, ${offsetX}px, auto, 0)`;
+        }
+
+        // 只在鼠标悬停在滑块按钮上时才开始拖动
+        sliderButton.addEventListener('mouseenter', function(e) {
+          isDragging = true;
+          handleDrag(e);
+        });
+
+        // 鼠标离开容器时停止拖动
+        container.addEventListener('mouseleave', function() {
+          isDragging = false;
+        });
+
+        // 拖动过程
+        document.addEventListener('mousemove', function(e) {
+          if (isDragging) {
+            handleDrag(e);
+            e.preventDefault(); // 防止拖动时选中文本
+          }
+        });
+
+        // 处理预览图点击
+        previews.forEach(preview => {
+          preview.addEventListener('click', function() {
+            const clearSrc = this.getAttribute('data-clear');
+            const blurSrc = this.getAttribute('data-blur');
+            clearImg.src = clearSrc;
+            blurImg.src = blurSrc;
+          });
+        });
+
+        // 添加触摸设备支持
+        sliderButton.addEventListener('touchstart', function(e) {
+          isDragging = true;
+          handleDrag(e.touches[0]);
+        });
+
+        document.addEventListener('touchend', function() {
+          isDragging = false;
+        });
+
+        document.addEventListener('touchmove', function(e) {
+          if (isDragging) {
+            handleDrag(e.touches[0]);
+            e.preventDefault();
+          }
+        });
+      });
+    </script>
+
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -256,7 +403,7 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>

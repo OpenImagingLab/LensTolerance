@@ -133,5 +133,84 @@ body {
   font-size: smaller;
 }
 
+.bal-container-small {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+}
+
+.bal-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.bal-after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    overflow: hidden;
+}
+
+.bal-before {
+    position: relative;
+    width: 100%;
+}
+
+.bal-before-inset {
+    position: relative;
+    width: 100%;
+}
+
+.bal-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #fff;
+    cursor: ew-resize;
+}
+
+.handle-left-arrow,
+.handle-right-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+.handle-left-arrow {
+    border-right: 6px solid #fff;
+    right: 2px;
+    top: 50%;
+}
+
+.handle-right-arrow {
+    border-left: 6px solid #fff;
+    left: 2px;
+    top: 50%;
+}
+
+.beforeLabel, .afterLabel {
+    position: absolute;
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border-radius: 4px;
+}
+
+.beforeLabel {
+    left: 10px;
+    top: 10px;
+}
+
+.afterLabel {
+    right: 10px;
+    top: 10px;
+}
+
 
 
